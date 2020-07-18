@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration</title>
+<style type="text/css">
+div{
+  text-align: center;
+  margin:100px 100px 100px 100px;
+  width: 600px;
+  height: 400px;
+  margin-top : 100px;
+  font-size: 20px;
+ box-sizing: border-box;
+margin-left:150px;
+ 
+}
+button{
+width: 100px;
+height:25px;
+}
+
+</style>
+<script>
+function validate(f) {
+if(f.firstName.value.length==0) {
+alert("please enter your first name with morethan 0 characters");
+return false;
+}
+if(f.lastName.value.length==0) {
+alert("please enter your last name with morethan 0 characters");
+return false;
+}
+if(f.password.value.length<6) {
+alert("please enter your password with morethan 6 characters");
+return false;
+}
+var possible = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9])+$/;
+if (!possible.test(f.emailId.value)) {
+   alert("Please provide a valid email address");
+   return false;
+}
+var phno= /^\d{10}$/;
+if(!phno.test(f.phNo.value)) {
+alert("enter valid phonenumber");
+return false;
+}
+}
+</script>
+</head>
+<body>
+<fieldset>
+<div>
+<form name="f" onsubmit="return validate(f)">
+<h1 align="center">Registration Form</h1><br>
+<label>First Name:</label>
+<input type="text" name="firstName" placeholder="Enter First Name"><br><br>
+<label>Last Name:</label>
+<input type="text" name="lastName" placeholder="Enter Last Name" ><br><br>
+<label>Email Id:</label>
+<input type="email" name="emailId" placeholder="Enter Email Id" ><br><br>
+<label>Password:</label>
+<input type="password" name="password" placeholder="Enter Password" ><br><br>
+<label>Phone Number</label>
+<input type="text" name="phNo" placeholder="Enter Phone Number" ><br><br>
+<button>Register</button>
+</form>
+</div>
+</fieldset>
+</body>
+</html>
